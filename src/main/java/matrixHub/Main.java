@@ -9,7 +9,7 @@ import matrixHub.utils.*;
 import mindustry.Vars;
 import mindustry.game.EventType.*;
 import mindustry.gen.Call;
-import mindustry.plugin.Plugin;
+import mindustry.mod.Plugin;
 
 public class Main extends Plugin{
 

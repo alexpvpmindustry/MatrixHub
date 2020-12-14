@@ -9,7 +9,7 @@ public class Config {
 
     public static void main() {
 
-        // Создаём папку если не существует
+        //
         final File dir1 = new File("config/mods/MatrixHub");
         if (!dir1.exists()) {
             dir1.mkdir();
