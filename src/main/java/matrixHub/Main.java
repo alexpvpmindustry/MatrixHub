@@ -74,7 +74,7 @@ public class Main extends Plugin {
     }
 
     public void showServerDownMessage(Player p) {
-        Call.label(p.con, "THIS SERVER IS DOWN ;-; PLEASE TRY AGAIN LATER", 5f, p.x, p.y + 15f);
+        Call.label(p.con, "THIS SERVER IS DOWN ;-; PLEASE TRY AGAIN LATER", 0.6f, p.x, p.y + 15f);
     }
 
     @Override
