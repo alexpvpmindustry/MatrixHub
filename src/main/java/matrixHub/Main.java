@@ -12,17 +12,13 @@ import mindustry.gen.Groups;
 import mindustry.mod.Plugin;
 import mindustry.gen.Player;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
 public class Main extends Plugin {
 
     public Main() {
         final String servertitle = "WELCOME TO [red]A[yellow]L[teal]E[blue]X [gold]HUB";
         Config.main();
-        //AtomicInteger time = new AtomicInteger();
         Events.on(ServerLoadEvent.class, event -> {
             Vars.netServer.admins.addActionFilter(playerAction -> false);
-
             Timer.schedule(() -> {
                 for (int i = 0; i < Groups.player.size(); i++) {
                     Player p = Groups.player.index(i);
@@ -52,7 +48,6 @@ public class Main extends Plugin {
                 showServerDownMessage(player);
             });
         }
-        //if(true)//Boolean.parseBoolean(Config.get("server2Works")))
         if (player.x <= 100f && player.x >= 0f && player.y >= 300f && player.y <= 400f) {
             Vars.net.pingHost("alexmindustry.ddns.net", 6568, host -> {
                 Call.connect(player.con, "alexmindustry.ddns.net", 6568);
