@@ -1,10 +1,12 @@
 package matrixHub.utils;
 
 import mindustry.Vars;
-import mindustry.content.Mechs;
-import mindustry.entities.type.Player;
+//import mindustry.content.Mechs;
+//import mindustry.entities.type.Player;
 import mindustry.gen.Call;
-import mindustry.type.Mech;
+import mindustry.gen.Groups;
+import mindustry.gen.Player;
+//import mindustry.type.Mech;
 
 
 public class Upd {
@@ -42,9 +44,9 @@ public class Upd {
             first=false;
             return true;
         }
-        for(int id = 0; id < Vars.playerGroup.all().size; id++){
+        for(int id = 0; id < Groups.player.size(); id++){
             player.sendMessage("qqq");
-            Player pl = Vars.playerGroup.all().get(id);
+            Player pl = Groups.player.index(id);
             if(pl == player) {
                 ok = true;
             }
@@ -55,41 +57,38 @@ public class Upd {
 
     public static void chekTile(Player player) {
 
-                            if(Boolean.parseBoolean(Config.get("server1Works")))
-                                if (player.x <= 306 && player.x >= 263 && player.y >= 488 && player.y <= 531) {
+                            if(true)//Boolean.parseBoolean(Config.get("server1Works")))
+                                if (player.x <= 10 && player.x >= 0 && player.y >= 0 && player.y <= 10) {
 
-                                    Vars.net.pingHost(Config.get("ip1"), Integer.parseInt(Config.get("port1")), host -> {
-                                        Call.onConnect(player.con, Config.get("ip1"), Integer.parseInt(Config.get("port1")));
-                                    }, e -> {
-                                    });
-
-                                }
-
-                            if(Boolean.parseBoolean(Config.get("server2Works")))
-                                if (player.x >= 487 && player.x <= 528 && player.y >= 488 && player.y <= 531) {
-
-                                    Vars.net.pingHost(Config.get("ip2"), Integer.parseInt(Config.get("port2")), host -> {
-                                        Call.onConnect(player.con, Config.get("ip2"), Integer.parseInt(Config.get("port2")));
-                                    }, e -> {
-                                    });
-
-                                }
-
-                            if(Boolean.parseBoolean(Config.get("server3Works")))
-                                if (player.x <= 306 && player.x >= 263 && player.y <= 306 && player.y >= 263) {
-
-                                    Vars.net.pingHost(Config.get("ip3"), Integer.parseInt(Config.get("port3")), host -> {
-                                        Call.onConnect(player.con, Config.get("ip3"), Integer.parseInt(Config.get("port3")));
+                                    Vars.net.pingHost("http://alexmindustry.ddns.net", 6569, host -> {
+                                        Call.connect(player.con, "http://alexmindustry.ddns.net", 6569);
                                     }, e -> {
                                     });
                                 }
 
-                            if(Boolean.parseBoolean(Config.get("server4Works")))
-                                if (player.x >= 487 && player.x <= 528 && player.y <= 306 && player.y >= 263) {
-                                    Vars.net.pingHost(Config.get("ip4"), Integer.parseInt(Config.get("port4")), host -> {
-                                        Call.onConnect(player.con, Config.get("ip4"), Integer.parseInt(Config.get("port4")));
+                            if(true)//Boolean.parseBoolean(Config.get("server2Works")))
+                                if (player.x <= 10 && player.x >= 0 && player.y >= 40 && player.y <= 50) {
+                                    Vars.net.pingHost("alexmindustry.ddns.net", 6568, host -> {
+                                        Call.connect(player.con, "alexmindustry.ddns.net", 6568);
                                     }, e -> {
                                     });
                                 }
+//
+//                            if(Boolean.parseBoolean(Config.get("server3Works")))
+//                                if (player.x <= 306 && player.x >= 263 && player.y <= 306 && player.y >= 263) {
+//
+//                                    Vars.net.pingHost(Config.get("ip3"), Integer.parseInt(Config.get("port3")), host -> {
+//                                        Call.connect(player.con, Config.get("ip3"), Integer.parseInt(Config.get("port3")));
+//                                    }, e -> {
+//                                    });
+//                                }
+//
+//                            if(Boolean.parseBoolean(Config.get("server4Works")))
+//                                if (player.x >= 487 && player.x <= 528 && player.y <= 306 && player.y >= 263) {
+//                                    Vars.net.pingHost(Config.get("ip4"), Integer.parseInt(Config.get("port4")), host -> {
+//                                        Call.connect(player.con, Config.get("ip4"), Integer.parseInt(Config.get("port4")));
+//                                    }, e -> {
+//                                    });
+//                                }
                         }
 }

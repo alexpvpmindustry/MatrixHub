@@ -68,12 +68,12 @@ public class Config {
             }
         }
 
-        File file5 = new File("config/maps/Hub.msav");
+        File file5 = new File("config/maps/alexhub.msav");
         if(!file5.exists()) {
             try (InputStream in = Config.class
                     .getClassLoader()
-                    .getResourceAsStream("Hub.msav");
-                 OutputStream out = new FileOutputStream("config/maps/Hub.msav")) {
+                    .getResourceAsStream("alexhub.msav");
+                 OutputStream out = new FileOutputStream("config/maps/alexhub.msav")) {
                 int data;
                 while ((data = in.read()) != -1) {
                     out.write(data);
