@@ -30,11 +30,9 @@ public class Main extends Plugin {
         Events.on(PlayerJoin.class, event -> {
             //Call.label(event.player.con, ConfigTranslate.get("server4.title"), 1100f, 508f, 304f);
             Call.label(servertitle, 1100f, 200f, 220f);
-            Call.label("PVP", 1100f, 350f, 350f);
             Call.label("SANDBOX", 1100f, 50f, 50f);
-            Call.label("(but its actually PVP)", 1100f, 50f, 40f);
             Call.label("ATTACK", 1100f, 50f, 350f);
-            Call.label("(but its actually PVP)", 1100f, 50f, 340f);
+            Call.label("PVP", 1100f, 350f, 350f);
             Call.label("SURVIVAL", 1100f, 350f, 50f);
         });
 
@@ -42,27 +40,31 @@ public class Main extends Plugin {
 
     public void checkAndConnect(Player player) {
         if (player.x <= 100f && player.x >= 10f && player.y >= 10f && player.y <= 100f) { // dont do exactly (0,0)
-            Vars.net.pingHost("alexmindustry.ddns.net", 6568, host -> {
-                Call.connect(player.con, "alexmindustry.ddns.net", 6568);
+            //"SANDBOX" //hostedserver name is alex server
+            Vars.net.pingHost("alexmindustryattac.ddns.net", 2504, host -> {
+                Call.connect(player.con, "alexmindustryattac.ddns.net", 2504);
             }, e -> {
                 showServerDownMessage(player);
             });
         }
         if (player.x <= 100f && player.x >= 0f && player.y >= 300f && player.y <= 400f) {
+            //attack //hostedserver name is alex3
+            Vars.net.pingHost("alexmindustryattac.ddns.net", 2293, host -> {
+                Call.connect(player.con, "alexmindustryattac.ddns.net", 2293);
+            }, e -> {
+                showServerDownMessage(player);
+            });
+        }
+        if (player.x <= 400f && player.x >= 300f && player.y >= 300f && player.y <= 400f) {
+            // PVP
             Vars.net.pingHost("alexmindustry.ddns.net", 6568, host -> {
                 Call.connect(player.con, "alexmindustry.ddns.net", 6568);
             }, e -> {
                 showServerDownMessage(player);
             });
         }
-        if (player.x <= 400f && player.x >= 300f && player.y >= 300f && player.y <= 400f) { //upper right
-            Vars.net.pingHost("alexmindustry.ddns.net", 6568, host -> {
-                Call.connect(player.con, "alexmindustry.ddns.net", 6568);
-            }, e -> {
-                showServerDownMessage(player);
-            });
-        }
-        if (player.x <= 400f && player.x >= 300f && player.y >= 0f && player.y <= 100f) {
+        if (player.x <= 400f && player.x >= 300f && player.y >= 10f && player.y <= 100f) {
+            // survival
             Vars.net.pingHost("alexmindustry.ddns.net", 6569, host -> {
                 Call.connect(player.con, "alexmindustry.ddns.net", 6569);
             }, e -> {
