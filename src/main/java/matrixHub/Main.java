@@ -82,9 +82,10 @@ public class Main extends Plugin {
 
     public void checkAndConnect(Player p) {
         servs.forEach(ele->{
-            if ( (p.x< (ele.value.x+24f)) && (p.x> (ele.value.x-24f)) && (p.y< (ele.value.y+24f)) && (p.y> (ele.value.y-24f)) ){
-                Vars.net.pingHost(ele.value.address, ele.value.port, host -> {
-                    Call.connect(p.con, ele.value.address, ele.value.port);
+            serverData sd = ele.value;
+            if ( (p.x< (sd.x+24f)) && (p.x> (sd.x-24f)) && (p.y< (sd.y+24f)) && (p.y> (sd.y-24f)) ){
+                Vars.net.pingHost(sd.address, sd.port, host -> {
+                    Call.connect(p.con, sd.address, sd.port);
                 }, e -> {
                     showServerDownMessage(p);
                 });
