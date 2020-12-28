@@ -1,7 +1,7 @@
 {
-  "name": "MatrixHub",
-  "author": "KeviTV",
+  "name": "AlexHub",
+  "author": "Alex",
   "main": "matrixHub.Main",
   "description": "Better Hub plugin for servers",
-  "version": 0.1
+  "version": 0.2
 }

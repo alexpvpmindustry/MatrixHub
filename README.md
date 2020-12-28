@@ -1,10 +1,10 @@
 > # Link to Discord support server
-> https://discord.gg/BnZV6Gj
+> https://discord.gg/KPVVsj2MGW
 
-# Matrix plugin
+# AlexHub plugin
 This plugin adds HUB to your server.
-
-![alt text](http://d.zaix.ru/iQP7.png)
+the original version dont work anymore, so i have redone the whole thing.
+its less modular, but at least it works.
 
 ## Installation
 
