@@ -8,6 +8,7 @@ import arc.util.*;
 import matrixHub.utils.*;
 
 import mindustry.Vars;
+import mindustry.core.GameState;
 import mindustry.game.EventType.*;
 import mindustry.game.Gamemode;
 import mindustry.gen.Call;
@@ -47,7 +48,7 @@ public class Main extends Plugin {
         final String servertitle = "WELCOME TO [red]A[yellow]L[teal]E[blue]X [gold]HUB";
         Config.main();
         Events.on(ServerLoadEvent.class, event -> {
-            state.rules.modeName="HUB";
+            state.rules.modeName="HUB"; //still cant change this name ;-;
             Vars.netServer.admins.addActionFilter(playerAction -> false);
             Timer.schedule(() -> {
                 for (int i = 0; i < Groups.player.size(); i++) {
@@ -57,17 +58,6 @@ public class Main extends Plugin {
             }, 0.5f, 0.5f);
             Timer.schedule(() -> {
                 totalPlayers =0;
-//                servs.forEach( (ele)-> {
-//                    Vars.net.pingHost(ele.value.address,ele.value.port,(v)->{
-//                        totalPlayers =totalPlayers +v.players;
-//                        String add_s = v.players<=1? "" :"s";
-//
-//                        Core.settings.put("totalPlayers", totalPlayers);
-//                    },(f)->{
-//                        Call.label("Server [red]OFFLINE[]", 29.9f, ele.value.x, ele.value.y-12f);
-//                        Call.label("Please [red]ping[] admins", 29.9f, ele.value.x, ele.value.y-24f);
-//                    });
-//                });
                 for (ObjectMap.Entry<String,serverData> ee : servs.entries()){
                     serverData sd = ee.value;
                     Vars.net.pingHost(sd.address,sd.port,(v)->{
@@ -84,7 +74,6 @@ public class Main extends Plugin {
         });
 
         Events.on(PlayerJoin.class, event -> {
-            //Call.label(event.player.con, ConfigTranslate.get("server4.title"), 1100f, 508f, 304f);
             Call.label(servertitle, 1100f, 200f, 220f);
             servs.forEach( (ele)-> Call.label(ele.value.name, 1100f, ele.value.x, ele.value.y));
         });
