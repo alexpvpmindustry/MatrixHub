@@ -49,7 +49,7 @@ public class Main extends Plugin {
         servs.put("PVP",new serverData("PVP","alexmindustry.ddns.net",6568,350f,350f));
         servs.put("SURVIVAL",new serverData("SURVIVAL","alexmindustry.ddns.net",6569,gc*27,gc*74));
         servs.put("secret test server",new serverData("secret test server","alexmindustrysecrettest.ddns.net",25590,gc*111,gc*146));
-
+        servs.put("super secret test server",new serverData("super secret test server","alexmindustrytest.myeffect.net",25775,gc*145,gc*106));
         final String servertitle = "WELCOME TO [red]A[yellow]L[teal]E[blue]X [gold]HUB";
         Config.main();
         Events.on(ServerLoadEvent.class, event -> {
@@ -74,6 +74,7 @@ public class Main extends Plugin {
         Events.on(PlayerJoin.class, event -> {
             Call.label(servertitle, 1100f, gc*74, gc*88);
             servs.forEach( (ele)-> Call.label(ele.value.name, 1100f, ele.value.x, ele.value.y));
+            event.player.team();
             updatePlayers();
             Timer.schedule(() -> {
                 Call.label(event.player.con,"Know how to make plugins?? [red]A[yellow]L[teal]E[blue]X[white] wants [accent]YOU[]!",20f,event.player.x,event.player.y-20f);
