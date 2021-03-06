@@ -41,15 +41,19 @@ public class Main extends Plugin {
     final float gc = 8f;// tile xy = in game coords*8
     public Main() {
 
-        servs.put("SANDBOX",new serverData("SANDBOX","alexmindustryattac.ddns.net",25814,gc*104,gc*104));
+        servs.put("SANDBOX",new serverData("SANDBOX","alexmindustrysandbox.ddns.net",25814,gc*104,gc*104));
         servs.put("TURBO PVP",new serverData("TURBO PVP","alexmindustryturbo.ddns.net",25854,gc*121,gc*74));
-        servs.put("TEST",new serverData("TEST","alexmindustryattac.ddns.net",25732,gc*74,gc*26));
+        servs.put("BRAINDUSTRY MOD",new serverData("BRAINDUSTRY MOD","alexmindustrytest.ddns.net",25647,gc*104,gc*44));
+        servs.put("PVP ASIA",new serverData("PVP ASIA","alexmindustryattac.ddns.net",25800,gc*74,gc*26));
+        //servs.put("ATTACK",new serverData("ATTACK","alexmindustryattac.ddns.net",25800,gc*44,gc*105));
         servs.put("HEX",new serverData("HEX","alexmindustryhex.ddns.net",25587,gc*74,gc*121));
-        servs.put("ATTACK",new serverData("ATTACK","alexmindustryattac.ddns.net",25800,gc*44,gc*105));
+        servs.put("ATTACK",new serverData("ATTACK","alexmindustryattac2.ddns.net",25800,gc*44,gc*105));
         servs.put("PVP",new serverData("PVP","alexmindustry.ddns.net",6568,350f,350f));
         servs.put("SURVIVAL",new serverData("SURVIVAL","alexmindustry.ddns.net",6569,gc*27,gc*74));
-        servs.put("secret test server",new serverData("secret test server","alexmindustrysecrettest.ddns.net",25590,gc*111,gc*146));
-        servs.put("super secret test server",new serverData("super secret test server","alexmindustrytest.myeffect.net",25775,gc*145,gc*106));
+        servs.put("test server1",new serverData("test server1","alexmindustrysecrettest.ddns.net",25590,gc*111,gc*146));
+        servs.put("test server2",new serverData("test server2","alexmindustrytest.myeffect.net",25775,gc*145,gc*106));
+        servs.put("VIP (beta)",new serverData("VIP (beta)","vipserver.ddns.net",25964,gc*91,gc*116));
+        servs.put("STAFF TEST SERVER",new serverData("STAFF TEST SERVER","lintech.us",6567,gc*124,gc*16));
         final String servertitle = "WELCOME TO [red]A[yellow]L[teal]E[blue]X [gold]HUB";
         Config.main();
         Events.on(ServerLoadEvent.class, event -> {
