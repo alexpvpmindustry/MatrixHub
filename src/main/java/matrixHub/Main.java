@@ -46,7 +46,7 @@ public class Main extends Plugin {
         servs.put("BRAINDUSTRY MOD",new serverData("BRAINDUSTRY MOD","alexmindustrybrain.ddns.net",25575,gc*104,gc*44));
         servs.put("PVP ASIA",new serverData("PVP ASIA","alexmindustryattac.ddns.net",25800,gc*74,gc*26));
         //servs.put("ATTACK",new serverData("ATTACK","alexmindustryattac.ddns.net",25800,gc*44,gc*105));
-        servs.put("HEX",new serverData("HEX","alexmindustryhex.ddns.net",25587,gc*74,gc*121));
+        servs.put("HEX",new serverData("HEX","alexmindustryhex.ddns.net",25583,gc*74,gc*121));
         servs.put("ATTACK",new serverData("ATTACK","alexmindustryattac2.ddns.net",25582,gc*44,gc*105));
         servs.put("PVP",new serverData("PVP","alexmindustry.ddns.net",25586,350f,350f));
         servs.put("SURVIVAL",new serverData("SURVIVAL","alexmindustry.ddns.net",25587,gc*27,gc*74));
